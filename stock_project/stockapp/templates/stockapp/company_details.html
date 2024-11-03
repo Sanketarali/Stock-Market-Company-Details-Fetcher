@@ -1,0 +1,24 @@
+<!-- stockapp/templates/stockapp/company_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Details</title>
+</head>
+<body>
+    <h1>Enter Company Ticker</h1>
+    <form method="get">
+        <input type="text" name="ticker" placeholder="e.g., AAPL, MSFT" required>
+        <button type="submit">Get Details</button>
+    </form>
+
+    {% if company_data %}
+        <h2>Company Information</h2>
+        <ul>
+            {% for key, value in company_data.items %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
